@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable QR Code Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="page1" class="page active">
+        <div class="center-content">
+            <h1 class="animated-text fade-in-up">Welcome</h1>
+            <button id="nextBtn" class="btn btn-primary slide-in">Next ></button>
+        </div>
+    </div>
+
+    <div id="page2" class="page">
+        <div class="center-content">
+            <h1 class="animated-text fade-in-up">Easily create your own QR code with AI</h1>
+            <button id="makeNowBtn" class="btn btn-primary slide-in">Make now</button>
+        </div>
+    </div>
+
+    <div id="page3" class="page">
+        <div class="generator-container scale-in">
+            <h2>AI QR Code Generator</h2>
+
+            <label for="qrType">What type of QR code?</label>
+            <select id="qrType" class="form-element">
+                <option value="website">Website Link</option>
+                <option value="email">Email Address</option>
+                <option value="phone">Phone Number</option>
+                <option value="whatsapp">WhatsApp Number</option>
+                <option value="address">Address / Text</option>
+                <option value="tiktok">TikTok Username</option>
+                <option value="facebook">Facebook Profile/Page URL</option>
+                <option value="instagram">Instagram Username</option>
+                <option value="youtube">YouTube Channel URL</option>
+            </select>
+
+            <div id="inputContainer">
+                 <input type="url" id="websiteInput" class="form-element" placeholder="e.g., https://example.com">
+                 <input type="email" id="emailInput" class="form-element" placeholder="e.g., your.email@example.com" style="display: none;">
+                 <input type="tel" id="phoneInput" class="form-element" placeholder="e.g., +1234567890" style="display: none;">
+                 <input type="tel" id="whatsappInput" class="form-element" placeholder="Include country code, e.g., +1234567890" style="display: none;">
+                 <textarea id="addressInput" class="form-element" placeholder="Enter address or any text here" style="display: none;"></textarea>
+                 <input type="text" id="tiktokInput" class="form-element" placeholder="Enter TikTok Username (e.g., username)" style="display: none;">
+                 <input type="text" id="facebookInput" class="form-element" placeholder="Enter Full Facebook Profile or Page URL" style="display: none;">
+                 <input type="text" id="instagramInput" class="form-element" placeholder="Enter Instagram Username (e.g., username)" style="display: none;">
+                 <input type="text" id="youtubeInput" class="form-element" placeholder="Enter Full YouTube Channel URL" style="display: none;">
+            </div>
+
+            <div class="color-options">
+                 <div class="color-picker">
+                     <label for="qrColorInput">QR Color:</label>
+                     <input type="color" id="qrColorInput" value="#000000">
+                 </div>
+                 <div class="color-picker">
+                     <label for="qrBgColorInput">Background:</label>
+                     <input type="color" id="qrBgColorInput" value="#ffffff">
+                 </div>
+            </div>
+
+            <button id="generateBtn" class="btn btn-cta">Generate QR Code</button>
+
+            <div id="qrcode" class="qrcode-display">
+                 <p>Your QR code will appear here.</p>
+            </div>
+
+            <div class="action-buttons">
+                <button id="aboutBtn" class="btn btn-info" style="display: none;">About</button>
+                <button id="downloadBtn" class="btn btn-download" style="display: none;">Download QR</button>
+                <button id="backToStartBtn" class="btn btn-secondary" style="display: none;">Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="page4" class="page">
+        <div class="center-content about-content">
+            <h1 class="animated-text fade-in-up">A Product of AOTA LTD</h1>
+            <p class="designed-by">Designed by MMH ANAS</p>
+            <button id="contactBtn" class="btn btn-link">Contact US</button>
+             <div id="contactDetails" class="contact-details" style="display: none;">
+                <p>Email: <a href="mailto:info.mmhanas.dev@gmail.com">info.mmhanas.dev@gmail.com</a></p>
+                <p>Email: <a href="mailto:hassan@aotaltd.com">hassan@aotaltd.com</a></p>
+                <p>Web: <a href="https://aota.com" target="_blank">aota.com</a></p>
+            </div>
+            <button id="backToGeneratorBtn" class="btn btn-secondary slide-in">Back</button>
+            <p class="version-number">v1.2.5.1</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
